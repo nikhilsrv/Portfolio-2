@@ -1,14 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "./globals.css"
+import { Barlow } from 'next/font/google';
+import Cursor from "./components/Cursor";
+import Navbar1 from "./components/Navbar/Navbar1";
+import { GlobalContextProvider} from "@/context/GlobalContext";
+import Sweep from "./components/Sweep";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const barlow = Barlow({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'], // include only what you need
+  variable: '--font-barlow',           // optional, for CSS variable support
 });
 
 export const metadata = {
@@ -17,13 +17,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+ 
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html className="dark" lang="en">
+      <GlobalContextProvider>
+        <body className={`dark ${barlow?.variable}`}>
+          {/* <Sweep/> */}
+          <Navbar1 />
+          {children}
+          <Cursor />
+        </body>
+      </GlobalContextProvider>
     </html>
   );
 }
