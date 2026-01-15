@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.prettierignore
+.idea/
+.vscode/
+.prettierrc
+.tmpclaude-a4b1-cwd
+

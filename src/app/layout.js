@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
   return (
     <html className="dark" lang="en">
       <GlobalContextProvider>
-        <body className={`dark ${barlow?.variable}`}>
+        <body className={`dark ${barlow?.variable}`} suppressHydrationWarning>
           {/* <Sweep/> */}
           <Navbar1 />
           {children}
