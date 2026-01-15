@@ -46,3 +46,4 @@ next-env.d.ts
 .prettierrc
 .tmpclaude-a4b1-cwd
 
+.husky/
